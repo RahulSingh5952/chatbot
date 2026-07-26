@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Helper Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Data Science + AI/ML Web App</p>
+        <h1>Study Helper Chatbot</h1>
+        <p class="subtitle">
+          A simple browser chatbot built with Python, Flask, and classic machine learning.
+        </p>
+        <div class="stats">
+          <div>
+            <span>Model accuracy</span>
+            <strong>{{ model_accuracy }}</strong>
+          </div>
+          <div>
+            <span>Training examples</span>
+            <strong>{{ dataset_size }}</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="chat-card">
+        <div class="chat-header">
+          <div>
+            <h2>Chat</h2>
+            <p>Ask about AI, data science, Python, or the project itself.</p>
+          </div>
+          <span class="status">Online</span>
+        </div>
+
+        <div id="messages" class="messages">
+          <div class="message bot">Hello. I’m your study helper. Ask me anything.</div>
+        </div>
+
+        <form id="chat-form" class="composer">
+          <input
+            id="message-input"
+            name="message"
+            type="text"
+            placeholder="Type your message..."
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+
+        <p id="hint" class="hint">Press Enter or click Send.</p>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
